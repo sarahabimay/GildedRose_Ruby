@@ -18,7 +18,7 @@ class BackstagePassRule < RulesBase
     decrement_sell_in_by_one(item)
 
     if (sell_by_date_exceeded?(item))
-        reduce_quality_to_zero(item)
+      reduce_quality_to_zero(item)
     end
   end
 end
