@@ -97,6 +97,7 @@ describe GildedRose do
       @gilded_rose.update_quality
       items = @gilded_rose.items
       expect(items[0].sell_in()).to eq(0) 
+      expect(items[0].quality()).to eq(0) 
     end
   end
 end
