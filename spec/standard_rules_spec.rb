@@ -1,10 +1,10 @@
-require './standard_rules.rb'
+require './standard_rule.rb'
 require './item.rb'
 require "rspec"
 
-describe StandardRules do
-  before(:each) do
-    @rules = StandardRules.new
+describe StandardRule do
+  let! (:each) do
+    @rules = StandardRule.new
   end
 
   it "is a standard item type" do
@@ -20,14 +20,14 @@ describe StandardRules do
       expect(item.quality).to eql(4)
     end
 
-    it "sell by date exceeded and quality > 0" do
+    it "exceed sell by date and quality > 0" do
       item = Item.new("Standard", 0, 5)
       @rules.update_item(item)
       expect(item.sell_in).to eql(-1)
       expect(item.quality).to eql(3)
     end
 
-    it "sell by date exceeded and quality below minimum" do
+    it "sell by date and quality below minimum" do
       item = Item.new("Standard", 0, 0)
       @rules.update_item(item)
       expect(item.sell_in).to eql(-1)

@@ -3,7 +3,7 @@ require "./conjured_rule.rb"
 require "./item.rb"
 
 describe "ConjuredRule" do
-  before(:each) do
+  let! (:each) do
     @rule = ConjuredRule.new
     @item_name = "Conjured Mana Cake"
   end

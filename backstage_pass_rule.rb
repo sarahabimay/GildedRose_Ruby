@@ -1,6 +1,6 @@
-require_relative "rules_base"
+require_relative "rule_base"
 
-class BackstagePassRule < RulesBase
+class BackstagePassRule < RuleBase
   def applicable_to?(item) 
     "Backstage passes to a TAFKAL80ETC concert".eql?(item.name)  
   end

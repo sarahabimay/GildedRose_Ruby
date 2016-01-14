@@ -14,7 +14,7 @@ describe GildedRose do
       expect(items[0].quality()).to eq(21) 
     end
 
-    it "increases quality twice as fast once sell by date has passed" do
+    it "increase quality twice as fast if sell by date has passed" do
       @gilded_rose.add_item(Item.new("Aged Brie", 0, 20))
       @gilded_rose.update_quality
       items = @gilded_rose.items
@@ -30,7 +30,7 @@ describe GildedRose do
     end
   end
 
-  context "when item is 'Sulfuras, Hand of Ragnaros'" do
+  context "item is 'Sulfuras, Hand of Ragnaros'" do
     it "never degrades in quality" do
       @gilded_rose.add_item(Item.new("Sulfuras, Hand of Ragnaros", 1, 80))
       @gilded_rose.update_quality
@@ -39,7 +39,7 @@ describe GildedRose do
     end
   end
 
-  context "when item is 'Backstage passes to a TAFKAL80ETC concert'" do
+  context "item is 'Backstage passes to a TAFKAL80ETC concert'" do
     it "improves in quality by 1 when sell_in > 10" do
       @gilded_rose.add_item(Item.new("Backstage passes to a TAFKAL80ETC concert", 15, 20))
       @gilded_rose.update_quality
@@ -47,14 +47,14 @@ describe GildedRose do
       expect(items[0].quality()).to eq(21) 
     end
 
-    it "improves in quality by 2 when sell_in > 5" do
+    it "quality improves by 2 when sell_in > 5" do
       @gilded_rose.add_item(Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 20))
       @gilded_rose.update_quality
       items = @gilded_rose.items
       expect(items[0].quality()).to eq(22) 
     end
 
-    it "improves in quality by 3 when sell_in <= 5" do
+    it "quality improves by 3 when sell_in <= 5" do
       @gilded_rose.add_item(Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 20))
       @gilded_rose.update_quality
       items = @gilded_rose.items

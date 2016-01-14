@@ -1,6 +1,6 @@
-require_relative "rules_base"
+require_relative "rule_base"
 
-class AgedBrieRule < RulesBase
+class AgedBrieRule < RuleBase
 
   def applicable_to?(item)
     "Aged Brie".eql?(item.name)

@@ -3,7 +3,7 @@ require './item.rb'
 require "rspec"
 
 describe BackstagePassRule do
-  before(:each) do
+  let! (:each) do
     @rules = BackstagePassRule.new
     @item_name = "Backstage passes to a TAFKAL80ETC concert"
   end
@@ -14,28 +14,28 @@ describe BackstagePassRule do
   end
 
   context "update quality and sell_in according to rule" do 
-    it "has quality above maximum value" do
+    it "quality above maximum value" do
       item = Item.new(@item_name, 5, 51);
       @rules.update_item(item)
       expect(item.sell_in).to eql(4)
       expect(item.quality).to eql(51)
     end
 
-    it "has sell_in days greater than 10 and quality less than maximum" do
+    it "sell_in days greater than 10 and quality less than maximum" do
       item = Item.new(@item_name, 11, 5);
       @rules.update_item(item)
       expect(item.sell_in).to eql(10)
       expect(item.quality).to eql(6)
     end
 
-    it "has sell_in days greater than 5 and valid quality" do
+    it "sell_in days greater than 5 and valid quality" do
       item = Item.new(@item_name, 6, 5);
       @rules.update_item(item)
       expect(item.sell_in).to eql(5)
       expect(item.quality).to eql(7)
     end
 
-    it "has sell_in days greater than 0 and valid quality" do
+    it "sell_in days greater than 0 and valid quality" do
       item = Item.new(@item_name, 5, 5);
       @rules.update_item(item)
       expect(item.sell_in).to eql(4)
@@ -49,7 +49,7 @@ describe BackstagePassRule do
       expect(item.quality).to eql(8)
     end
 
-    it "item has passed sell by date so quality should be reduced to 0" do
+    it "exceed sell by date so quality should be reduced to 0" do
       item = Item.new(@item_name, 0, 5);
       @rules.update_item(item)
       expect(item.sell_in).to eql(-1)

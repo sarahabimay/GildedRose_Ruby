@@ -1,8 +1,8 @@
 
-require_relative "rules_base"
-require_relative "standard_rules"
+require_relative "rule_base"
+require_relative "standard_rule"
 
-class ConjuredRule < StandardRules 
+class ConjuredRule < StandardRule 
   def applicable_to?(item)
     "Conjured Mana Cake".eql?(item.name)
   end

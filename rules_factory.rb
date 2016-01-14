@@ -4,16 +4,18 @@ class RulesFactory
   end
 
   def find_rule_for(item)
-    if ("Aged Brie".eql?(item.name))
+    item_name = item.name
+    case item_name
+    when "Aged Brie"
       AgedBrieRule.new
-    elsif ("Sulfuras, Hand of Ragnaros".eql?(item.name))
+    when "Sulfuras, Hand of Ragnaros"
       SulfurasRule.new
-    elsif ("Backstage passes to a TAFKAL80ETC concert".eql?(item.name))
+    when "Backstage passes to a TAFKAL80ETC concert"
       BackstagePassRule.new
-    elsif ("Conjured Mana Cake".eql?(item.name))
+    when "Conjured Mana Cake"
       ConjuredRule.new
-    else 
-      StandardRules.new
+    else
+      StandardRule.new
     end
   end
 end
