@@ -8,11 +8,19 @@ class AgedBrieRule < RulesBase
 
   def update_item(item)
     if (quality_below_maximum?(item))
-      increment_quality_by_one(item)
+      update_quality(item)
     end
-    decrement_sell_in_by_one(item)
+    update_sell_in(item)
     if (sell_by_date_exceeded?(item) && quality_below_maximum?(item))
-      increment_quality_by_one(item)
+      update_quality(item)
     end
+  end
+
+  def update_quality(item)
+      increment_quality_by_one(item)
+  end
+
+  def update_sell_in(item)
+    decrement_sell_in_by_one(item)
   end
 end

@@ -11,7 +11,7 @@ class RulesFactory
     elsif ("Backstage passes to a TAFKAL80ETC concert".eql?(item.name))
       BackstagePassRule.new
     elsif ("Conjured Mana Cake".eql?(item.name))
-      ConjuredManaRule.new
+      ConjuredRule.new
     else 
       StandardRules.new
     end

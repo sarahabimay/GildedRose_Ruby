@@ -5,6 +5,13 @@ class RulesBase
   def applicable_to?(item)
   end
 
+  def update_quality(item)
+  end
+
+  def update_sell_in(item)
+    decrement_sell_in_by_one(item)
+  end
+
   def quality_below_maximum?(item)
     item.quality < 50
   end

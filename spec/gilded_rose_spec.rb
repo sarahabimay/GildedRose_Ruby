@@ -101,4 +101,30 @@ describe GildedRose do
       expect(items[0].quality()).to eq(0) 
     end
   end
+
+  context "when item is a 'conjured' item" do
+    it "has quality and sell_in reduced by 1" do
+      @gilded_rose.add_item(Item.new("Conjured Mana Cake", 5, 5))
+      @gilded_rose.update_quality
+      items = @gilded_rose.items
+      expect(items[0].sell_in()).to eq(4) 
+      expect(items[0].quality()).to eq(3) 
+    end
+
+    it "decreases in quality twice as fast once sell by date has passed" do
+      @gilded_rose.add_item(Item.new("Conjured Mana Cake", 0, 5))
+      @gilded_rose.update_quality
+      items = @gilded_rose.items
+      expect(items[0].sell_in()).to eq(-1) 
+      expect(items[0].quality()).to eq(1) 
+    end
+
+    it "never has negative quality" do
+      @gilded_rose.add_item(Item.new("Conjured Mana Cake", 1, 0))
+      @gilded_rose.update_quality
+      items = @gilded_rose.items
+      expect(items[0].sell_in()).to eq(0) 
+      expect(items[0].quality()).to eq(0) 
+    end
+  end
 end

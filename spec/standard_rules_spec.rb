@@ -12,7 +12,7 @@ describe StandardRules do
       expect(@rules.applicable_to?(item)).to eql(true)
   end
 
-  context "update quality and sellin" do 
+  context "update quality and sell_in" do 
     it "sell by date not exceeded and quality >0" do
       item = Item.new("Standard", 5, 5)
       @rules.update_item(item)

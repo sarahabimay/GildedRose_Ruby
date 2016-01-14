@@ -25,6 +25,12 @@ describe RulesFactory do
     expect(rule.class.name).to eql("BackstagePassRule")
   end
 
+  it "found Conjured Mana Cake" do
+    item = Item.new("Conjured Mana Cake", 3, 6)
+    rule = @rule_factory.find_rule_for(item)
+    expect(rule.class.name).to eql("ConjuredRule")
+  end
+  
   it "found StandardRule" do
     item = Item.new("Elixir of the Mongoose", 5, 7)
     rule = @rule_factory.find_rule_for(item)
