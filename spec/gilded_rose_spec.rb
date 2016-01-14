@@ -3,8 +3,9 @@ require "rspec"
 
 describe GildedRose do
   before(:each) do
-    @gilded_rose = GildedRose.new
+    @gilded_rose = GildedRose.new(RulesFactory.new)
   end
+
   context "when item is age improved" do
     it "increases by one when sell in decreases" do
       @gilded_rose.add_item(Item.new("Aged Brie", 1, 20))
