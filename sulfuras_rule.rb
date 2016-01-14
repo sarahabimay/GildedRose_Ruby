@@ -1,6 +1,6 @@
-require_relative "rules_base.rb"
+require_relative "rule_base.rb"
 
-class SulfurasRule < RulesBase
+class SulfurasRule < RuleBase
   def applicable_to?(item)
     "Sulfuras, Hand of Ragnaros".eql?(item.name)
   end
