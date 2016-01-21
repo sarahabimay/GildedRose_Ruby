@@ -1,4 +1,4 @@
-require_relative "rule_base"
+require "rule_base"
 
 class AgedBrieRule < RuleBase
 

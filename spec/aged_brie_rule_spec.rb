@@ -1,5 +1,4 @@
-require "./aged_brie.rb"
-require "rspec"
+require "aged_brie"
 
 describe AgedBrieRule do
   let! (:each) do

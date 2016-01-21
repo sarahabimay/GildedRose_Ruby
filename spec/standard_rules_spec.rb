@@ -1,6 +1,5 @@
-require './standard_rule.rb'
-require './item.rb'
-require "rspec"
+require 'standard_rule'
+require 'item'
 
 describe StandardRule do
   let! (:each) do
