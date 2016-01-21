@@ -1,5 +1,4 @@
-require './gilded_rose.rb'
-require "rspec"
+require 'gilded_rose'
 
 describe GildedRose do
   before(:each) do

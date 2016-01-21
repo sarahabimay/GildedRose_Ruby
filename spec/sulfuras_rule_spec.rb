@@ -1,5 +1,4 @@
-require "./sulfuras_rule.rb"
-require "rspec"
+require "sulfuras_rule"
 
 describe SulfurasRule do
   before(:each) do

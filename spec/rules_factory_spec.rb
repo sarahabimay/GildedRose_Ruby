@@ -1,6 +1,5 @@
-require "rspec"
-require "./rules_factory.rb"
-require "./item.rb"
+require "rules_factory"
+require "item"
 
 describe RulesFactory do
   let! (:each) { @rules_factory = RulesFactory.new }

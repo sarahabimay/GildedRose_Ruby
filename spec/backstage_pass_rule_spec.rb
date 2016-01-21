@@ -1,6 +1,5 @@
-require './backstage_pass_rule.rb'
-require './item.rb'
-require "rspec"
+require 'backstage_pass_rule'
+require 'item'
 
 describe BackstagePassRule do
   let! (:each) do

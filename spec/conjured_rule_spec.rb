@@ -1,6 +1,5 @@
-require "rspec"
-require "./conjured_rule.rb"
-require "./item.rb"
+require "conjured_rule"
+require "item"
 
 describe "ConjuredRule" do
   let! (:each) do

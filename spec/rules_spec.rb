@@ -1,6 +1,5 @@
-require './rule_base.rb'
-require './item.rb'
-require "rspec"
+require 'rule_base'
+require 'item'
 
 describe RuleBase do
   let! (:each) { @rule_base = RuleBase.new }
